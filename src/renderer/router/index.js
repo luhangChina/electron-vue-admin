@@ -71,6 +71,18 @@ export const constantRouterMap = [
       }
     ]
   },
+  {
+    path: '/bgrh',
+    component: Layout,
+    children: [
+      {
+        path: 'bgrh',
+        name: 'bgrh',
+        component: () => import('@/views/bgrh/index'),
+        meta: { title: '报关融合版', icon: 'form' }
+      }
+    ]
+  },
 
   { path: '*', redirect: '/404', hidden: true }
 ]
