@@ -83,7 +83,18 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  {
+    path: '/entering',
+    component: Layout,
+    children: [
+      {
+        path: 'entering',
+        name: 'entering',
+        component: () => import('@/views/entering/index'),
+        meta: { title: '快捷录入', icon: 'form' }
+      }
+    ]
+  },
   { path: '*', redirect: '/404', hidden: true }
 ]
 
