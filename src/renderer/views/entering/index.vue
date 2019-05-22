@@ -36,7 +36,7 @@
       </el-table-column>
       <el-table-column align="center" label='备案序号' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.recordNo}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='商品名称' width="95">
@@ -51,62 +51,62 @@
       </el-table-column>
       <el-table-column align="center" label='原厂国' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.ori}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='数量' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.num}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='单位' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.unit}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='单价' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.price}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='币制' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.coinType}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='总价' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.total}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='征免' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.free}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='最终目的国' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.dest}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='境内货源地' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.oriAddr}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='境内货源地详细' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.oriAddrInfo}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='危险品' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.danger}}
         </template>
       </el-table-column>
       <el-table-column align="center" label='监管条件' width="95">
         <template slot-scope="scope">
-          {{scope.row.goodsNo}}
+          {{scope.row.supervise}}
         </template>
       </el-table-column>
     </el-table>
