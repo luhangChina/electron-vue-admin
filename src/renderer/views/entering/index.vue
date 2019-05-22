@@ -111,6 +111,15 @@
       </el-table-column>
     </el-table>
 
+    <el-row>
+      <i class="el-icon-plus"></i>
+      <i class="el-icon-delete"></i>
+      <i class="el-icon-document-copy"></i>
+      <i class="el-icon-arrow-up"></i>
+      <i class="el-icon-arrow-down"></i>
+      <i class="el-icon-edit"></i>
+    </el-row>
+
 
   </div>
 </template>
