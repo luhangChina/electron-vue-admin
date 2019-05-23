@@ -120,7 +120,163 @@
       <i class="el-icon-edit"></i>
     </el-row>
 
+    <el-form ref="form" :model="cur" label-width="120px">
+      <el-row>
+        <el-col :span="18">
+          <el-row>
+            <el-col :span="12">
+              <el-form-item label="总价汇总">
+                <el-input disabled="" v-model="cur.totalPrice"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="12">
+              <el-form-item label="重量汇总">
+                <el-input disabled="" v-model="cur.totalWeight"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+          <el-row>
+            <el-col :span="4">
+              <el-form-item label="商品序号">
+                <el-input disabled="" v-model="cur.seq"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="商品编码">
+                <el-input disabled="" v-model="cur.goodsNo"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="检验检疫编码">
+                <el-input disabled="" v-model="cur.inspectNo"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="危险品">
+                <el-input disabled="" v-model="cur.danger"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="监管条件">
+                <el-input disabled="" v-model="cur.inspectCondition"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
 
+          <el-row>
+            <el-col :span="12">
+              <el-form-item label="商品名称">
+                <el-input disabled="" v-model="cur.goodsName"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="12">
+              <el-form-item label="规格型号">
+                <el-input disabled="" v-model="cur.spec"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="5">
+              <el-form-item label="成交数量">
+                <el-input disabled="" v-model="cur.num"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="成交单位">
+                <el-input disabled="" v-model="cur.unit"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="单价">
+                <el-input disabled="" v-model="cur.price"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="总价">
+                <el-input disabled="" v-model="cur.amount"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="币制">
+                <el-input disabled="" v-model="cur.coinType"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="5">
+              <el-form-item label="法定数量">
+                <el-input disabled="" v-model="cur.stdNum"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="法定单位">
+                <el-input disabled="" v-model="cur.stdUnit"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="版本号">
+                <el-input disabled="" v-model="cur.version"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="货号">
+                <el-input disabled="" v-model="cur.goodsNumber"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="最终目的国">
+                <el-input disabled="" v-model="cur.dest"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="5">
+              <el-form-item label="第二数量">
+                <el-input disabled="" v-model="cur.secNum"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="5">
+              <el-form-item label="第二单位">
+                <el-input disabled="" v-model="cur.secUnit"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="14">
+              <el-form-item label="原产国(地区)">
+                <el-input disabled="" v-model="cur.ori"></el-input>
+              </el-form-item>
+            </el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="10">
+              <el-form-item label="境内货源地">
+                <el-input disabled="" v-model="cur.orgAddress"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="4">
+              <el-form-item label="征名">
+                <el-input disabled="" v-model="cur.ree"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="10">
+              <el-button icon="el-icon-d-arrow-left">第一条</el-button>
+              <el-button icon="el-icon-arrow-left">上一条</el-button>
+              <el-button icon="el-icon-arrow-right">下一条</el-button>
+              <el-button icon="el-icon-d-arrow-right">最后一条</el-button>
+
+            </el-col>
+          </el-row>
+
+
+        </el-col>
+        <el-col :span="6">
+
+        </el-col>
+      </el-row>
+    </el-form>
   </div>
 </template>
 
@@ -143,6 +299,8 @@ export default {
         type: [],
         resource: '',
         desc: ''
+      },
+      cur: {
       }
     }
   },
