@@ -19,7 +19,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "electron-vue-admin",
+    "productName": "yunmao-window",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
