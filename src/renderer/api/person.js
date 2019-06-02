@@ -4,7 +4,7 @@ export function getList(params) {
     setTimeout(function() {
       resolve({
         'code': 20000, 'data': {
-          'items': new Array(20).fill({
+          'items': new Array(2).fill({
             'name': '陆航',
             'date': '2019-10-20 23:00:00'
           })

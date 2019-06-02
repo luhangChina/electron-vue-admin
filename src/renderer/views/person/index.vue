@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-button class="addButton" type="primary" @click="dialogFormVisible = true">新增成员</el-button>
+    <el-button class="addButton" type="primary" @click="onShow">新增成员</el-button>
   
     <el-dialog title="新增成员" :visible.sync="dialogFormVisible">
       <el-form :model="form" ref="PersonForm" label-width="120px" :rules="loginRules">
@@ -8,8 +8,8 @@
           <el-input v-model="form.name" placeholder="名字"></el-input>
         </el-form-item>
         <el-form-item label="生日" required>
-          <el-form-item prop="date1">
-            <el-date-picker type="date" placeholder="选择日期" v-model="form.date1" style="width: 100%;"></el-date-picker>
+          <el-form-item prop="date">
+            <el-date-picker type="date" placeholder="选择日期" v-model="form.date" style="width: 100%;"></el-date-picker>
           </el-form-item>
         </el-form-item>
       </el-form>
@@ -26,12 +26,12 @@
           {{scope.$index+1}}
         </template>
       </el-table-column>
-      <el-table-column label="name">
+      <el-table-column label="name" >
         <template slot-scope="scope">
           {{scope.row.name+scope.$index}}
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="birth" width="200">
+      <el-table-column align="center" prop="created_at" label="birth" width="300">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
           <span>{{scope.row.date}}</span>
@@ -54,10 +54,10 @@ export default {
       dialogFormVisible: false,
       loginRules: {
         name: [{ required: true, trigger: 'blur', message: '请填写名字' }],
-        date1: [{ required: true, message: '请选择日期', trigger: 'change' }]
+        date: [{ required: true, message: '请选择日期', trigger: 'change' }]
       },
       form: {
-        date1: '',
+        date: '',
         name: ''
       }
     }
@@ -83,14 +83,18 @@ export default {
         this.listLoading = false
       })
     },
+    onShow() {
+      this.dialogFormVisible = true
+      this.$refs.PersonForm.resetFields()
+    },
     onSubmit() {
       this.$refs.PersonForm.validate((vaild, values) => {
         if (vaild) {
-          createPerson(this.form).then(response => {
+          const _params = JSON.parse(JSON.stringify(this.form))
+          createPerson(_params).then(response => {
             this.$message('提交成功!')
-            this.$refs.PersonForm.resetFields()
+            this.list = [...this.list, _params]
             this.dialogFormVisible = false
-            this.fetchData()
           })
         }
       })
